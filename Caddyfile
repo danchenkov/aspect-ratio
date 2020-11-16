@@ -1,0 +1,17 @@
+{
+	debug
+	http_port 8083
+	https_port 6083
+	admin off
+	local_certs
+}
+
+vue.local {
+	encode gzip
+	file_server
+}
+
+localhost {
+	redir https://aspect.local:6083{uri}
+}
+
