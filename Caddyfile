@@ -6,7 +6,7 @@
 	local_certs
 }
 
-vue.local {
+aspect.local {
 	encode gzip
 	file_server
 }
