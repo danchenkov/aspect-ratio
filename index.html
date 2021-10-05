@@ -93,7 +93,7 @@
 
       if (difference < 0.0007) return printAspect(mapPrecision[minIndex], a/b, difference);
 
-      return printAspect(Math.round(a/g)+"x"+Math.round(b/g), a/b, difference, mapPrecision[minIndex], difference, mapPrecision[nxtIndex], Math.abs(a/b - nxtIndex));
+      return printAspect(Math.round(a/g)+"÷"+Math.round(b/g), a/b, difference, mapPrecision[minIndex], difference, mapPrecision[nxtIndex], Math.abs(a/b - nxtIndex));
     }
 
     function processForm(e) {
@@ -139,29 +139,29 @@
       if (arguments.length == 0) { return "no aspect ratio passed"; }
       if (arguments.length < 5 || arguments[3] == undefined) {
         return BLOCKLEAD + BHEAD +
-        HLEAD + arguments[0] + " (" + precise(arguments[1]) + ")" + HTRAIL +
+        HLEAD + precise(arguments[1]) + " ⇒ " + arguments[0] + HTRAIL +
         PLEAD + "(" + Math.round(1000 * arguments[2]) / 10 + "% difference)" + PTRAIL +
         BTRAIL + BLOCKTRAIL;
       }
       if (arguments.length < 7 || arguments[5] == undefined) {
         return BLOCKLEAD + BHEAD +
-        HLEAD + arguments[0] + " (" + precise(arguments[1]) + ")" + HTRAIL + BTRAIL +
-        BHEAD + PLEAD + MOST + " (with " + Math.round(1000 * arguments[4]) / 10 + "% difference)" + PTRAIL +
+        HLEAD + precise(arguments[1]) + " ⇒ " + arguments[0] + HTRAIL + BTRAIL +
+        BHEAD + PLEAD + MOST + " (" + Math.round(1000 * arguments[4]) / 10 + "% difference)" + PTRAIL +
         HLEAD + arguments[2] + HTRAIL +
         BTRAIL + BLOCKTRAIL;
       }
       if (arguments.length < 7 || arguments[5] == undefined || arguments[6] > 1) {
         return BLOCKLEAD + BHEAD +
-        HLEAD + arguments[0] + " (" + precise(arguments[1]) + ")" + HTRAIL + BTRAIL +
-        BHEAD + PLEAD + NEAREST + " (with " + Math.round(1000 * arguments[4]) / 10 + "% difference)" + PTRAIL +
+        HLEAD + precise(arguments[1]) + " ⇒ " + arguments[0] + HTRAIL + BTRAIL +
+        BHEAD + PLEAD + NEAREST + " (" + Math.round(1000 * arguments[4]) / 10 + "% difference)" + PTRAIL +
         HLEAD + arguments[3] + HTRAIL +
         BTRAIL + BLOCKTRAIL;
       }
       return BLOCKLEAD + BHEAD +
-        HLEAD + arguments[0] + " (" + precise(arguments[1]) + ")" + HTRAIL + BTRAIL +
-        BHEAD + PLEAD + NEAREST + " (with " + Math.round(1000 * arguments[4]) / 10 + "% difference)" + PTRAIL +
+        HLEAD + precise(arguments[1]) + " ⇒ " + arguments[0] + HTRAIL + BTRAIL +
+        BHEAD + PLEAD + NEAREST + " (" + Math.round(1000 * arguments[4]) / 10 + "% difference)" + PTRAIL +
         HLEAD + arguments[3] + HTRAIL + BTRAIL +
-        BHEAD + PLEAD + NEXT + " (with " + Math.round(1000 * arguments[6]) / 10 + "% difference)" + PTRAIL +
+        BHEAD + PLEAD + NEXT + " (" + Math.round(1000 * arguments[6]) / 10 + "% difference)" + PTRAIL +
         HLEAD + arguments[5] + HTRAIL +
         BTRAIL + BLOCKTRAIL;
     }
